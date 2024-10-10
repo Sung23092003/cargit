@@ -1,0 +1,17 @@
+.sidebar {
+    height: 80vh; 
+    padding: 20px; 
+    background-color: #f8f9fa; 
+    border-right: 1px solid #dee2e6; 
+  }
+  
+  .sidebar h4 {
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+    font-weight: bold; 
+  }
+  
+  .sidebar .form-group {
+    margin-bottom: 15px; 
+  }
+  
