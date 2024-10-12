@@ -18,6 +18,50 @@
   color: #ff6b6b; 
 
 }
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.icon-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon-item:hover {
+  color: #ff6347;
+}
+
+.like-icon {
+  color: #ff6347;
+}
+
+.car-icon {
+  color: #3498db;
+}
+
+
+.location-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding: 12px 0;
+}
+
+.location-container i {
+  margin-right: 5px;
+}
+
+
 /* car */
 
 .car__item {
