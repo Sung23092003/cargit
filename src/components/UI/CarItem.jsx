@@ -5,12 +5,12 @@ import "../../styles/car-item.css";
 import React, { useState } from "react";
 
 const CarItem = (props) => {
-  const { imgUrl, model, carName, automatic, speed, price,numberOfSeat } = props.item;
+  const { imgUrl, model, carName, automatic, speed, price, numberOfSeat } = props.item;
 
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
-    setIsLiked(!isLiked); 
+    setIsLiked(!isLiked);
   };
 
   return (
@@ -18,11 +18,11 @@ const CarItem = (props) => {
       <div className="car__item">
         {/* Nút thả tim */}
         <div className="like__icon" onClick={handleLike}>
-          <i className={isLiked ? "ri-heart-fill liked" : "ri-heart-line"}></i>
+          <i className={isLiked ? "mdi mdi-like-outline liked" : "mdi mdi-like-outline"}></i>
         </div>
 
         <div className="car__img">
-          <img src={imgUrl} alt="" className="w-100" />
+          <img src={imgUrl} alt={carName} className="w-100" />
         </div>
 
         <div className="car__item-content mt-4">
@@ -31,17 +31,35 @@ const CarItem = (props) => {
             ${price}.00 <span>/ Day</span>
           </h6>
 
+          {/* Thông tin xe */}
           <div className="car__item-info d-flex align-items-center justify-content-between mt-3 mb-4">
-            <span className=" d-flex align-items-center gap-1">
+            <span className="d-flex align-items-center gap-1">
               <i className="ri-car-line"></i> {model}
             </span>
-            <span className=" d-flex align-items-center gap-1">
+            <span className="d-flex align-items-center gap-1">
               <i className="ri-settings-2-line"></i> {automatic}
             </span>
-            <span className=" d-flex align-items-center gap-1">
+            <span className="d-flex align-items-center gap-1">
               <i className="ri-user-fill"></i> {numberOfSeat}
             </span>
           </div>
+
+          {/* Biểu tượng Like và Car */}
+          <div className="mt-2 icons-container">
+            <div className="icon-item">
+              <i className="ri-thumb-up-line like-icon"></i>
+            </div>
+            <div className="icon-item">
+              <i className="ri-car-line car-icon"></i>
+            </div>
+          </div>
+
+          {/* Hiển thị địa điểm */}
+          <div className="location-container">
+            <i className="ri-map-pin-line"></i>
+            <span>112 Mẹ Nhu</span>
+          </div>
+
 
           <button className="w-50 car__item-btn car__btn-rent">
             <Link to={`/cars/${carName}`}>Rent</Link>
@@ -55,6 +73,5 @@ const CarItem = (props) => {
     </Col>
   );
 };
-
 
 export default CarItem;
